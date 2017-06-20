@@ -1,0 +1,2 @@
+top -b -n 1 | grep 'Cpu(s)'
+%[01;31m[KCpu(s)[m[K:  0.6 us,  0.1 sy,  0.0 ni, 99.1 id,  0.1 wa,  0.0 hi,  0.0 si,  0.0 st

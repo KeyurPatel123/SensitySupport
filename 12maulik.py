@@ -19,7 +19,7 @@ def job_function():
     sum_write= 0.0
     sum_read = 0.0
     s = pxssh.pxssh()
-    if not s.login ('192.168.0.103', 'kd48432', 'kdbose'):
+    if not s.login ('127.0.0.3', 'keyur', 'einfochips'):
     		print "SSH session failed on login."
     		print str(s)
 
@@ -123,13 +123,10 @@ def job_function():
 	logging.basicConfig()
 	for line in diskspace:
 		if "." in line:
-			print line
 			b = line.split("	/")[0];
-			print b;
 				
 			if "G" in b:
 				b = float(b.split("G")[0]);	
-				#b = b*1000000
 				b = str(b)	
 				print "Disk Usage of /usr/lib is " + b + " Gb\n"
 	###################
@@ -144,8 +141,9 @@ def job_function():
 			print line
 			cpuavailable = line.split(":")[1];
 			cpuavailable = cpuavailable.split("id")[0];
-			cpuavailable=cpuavailable.split(",")[3]
-			print "CPU Available is {0}\n".format(str(cpuavailable))
+			cpuavailable = cpuavailable.split(",")[3]
+			cpuavailable = str(cpuavailable)
+			print "CPU Available is " + cpuavailable + " \n"
 
 	#Reading the network packet received information
 	file = open("networkReceivedInfo.txt","r");
